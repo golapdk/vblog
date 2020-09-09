@@ -54,6 +54,7 @@
     "gatsby-source-filesystem": "2.3.27",
     "gatsby-source-ghost": "4.0.5",
     "gatsby-transformer-sharp": "2.5.14",
+    "jquery": "^3.5.1",
     "lodash": "4.17.20",
     "react": "16.13.1",
     "react-dom": "16.13.1",

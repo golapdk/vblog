@@ -8,7 +8,14 @@ import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
-import '../../styles/app.css'
+// import '../../styles/app.css'
+
+// import '../../js/main.js'
+// import '../../js/jquery.js'
+// import $ from "jquery";
+import '../../styles/all.css'
+import '../../styles/mainsite.css'
+import '../../styles/responsive.css'
 
 /**
 * Main layout component
@@ -23,6 +30,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
+    // console.log(site)
+    // console.log(children[0][0])
+    // console.log(bodyClass)
+    // console.log($)
+
     return (
         <>
             <Helmet>
@@ -32,16 +44,55 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             </Helmet>
 
             <div className="viewport">
-
                 <div className="viewport-top">
-                    {/* The main header section on top of the screen */}
-                    <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
-                        <div className="container">
+                    <header className="header_area header_stick ">
+                        <nav className="navbar navbar-expand-lg menu_center">
+                            <div className="container">
+                                <a className="navbar-brand sticky_logo">
+                                    <img src="/images/logo.png" width="220" />
+                                    {/* <img width="220" data-src="https://res.cloudinary.com/vantagecircle/image/upload/w_220/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Circle" className="stick_logo lozad" src="https://res.cloudinary.com/vantagecircle/image/upload/w_220/v1580904957/VantageFit/website/00-vantagefit-logo.png" data-loaded="true" /> */}
+                                </a>
+                                <a href="#" data-toggle="modal" data-target="#search" className="search-trigger headertrigger search_iconmob">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
+                                        <path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="#fff">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <button className="navbar-toggler collapsed marketinglanding post no-image" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+                                    <span className="menu_toggle"> 
+                                        <span className="hamburger"> 
+                                            <span></span> <span></span> <span></span> 
+                                        </span> 
+                                        <span className="hamburger-cross"> <span></span> <span></span> </span> 
+                                    </span> 
+                                </button>
+                                <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                                    <ul id="menu-main-menu-global" className="navbar-nav menu  ml-auto">
+                                        <li className="nav-home menu-item nav-item" role="menuitem">
+                                            <a href="https://www.vantagefit.io/" className="nav-link menu-top">Home</a>
+                                        </li>
+                                        <li className="nav-features menu-item nav-item" role="menuitem">
+                                            <a href="https://www.vantagefit.io/features/" className="nav-link menu-top">Features</a>
+                                        </li>
+                                        <li className="nav-pricing menu-item nav-item" role="menuitem">
+                                            <a href="https://www.vantagefit.io/pricing/" className="nav-link menu-top">Pricing</a>
+                                        </li>
+                                        <li className="nav-blog nav-current menu-item nav-item" role="menuitem">
+                                            <a href="https://blog.vantagefit.io/" className="nav-link menu-top active">Blog</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" data-toggle="modal" data-target="#search" className="search-trigger headertrigger search_icondesk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966"><path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="#fff"></path></svg></a>
+                                    <a href="#" data-toggle="modal" data-target="#bookmark" className="bookmark-trigger headertrigger"><span className="counter hidden"></span><i className="far fa-bookmark"></i><i className="fas fa-bookmark"></i></a>
+                                    <a className="menu_cus btn_get btn-meta btn_hover menu-top" href="https://go.vantagefit.io/get-a-demo/">Request Demo </a>
+                                </div>
+                            </div>
+                        </nav>
+                        {/* <div className="container">
                             <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
                                         {site.logo ?
-                                            <img className="site-logo" src={site.logo} alt={site.title} />
+                                            <img className="site-logo" width="220" src={site.logo} alt={site.title} />
                                             : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
                                         }
                                     </Link>
@@ -60,26 +111,51 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 null}
                             <nav className="site-nav">
                                 <div className="site-nav-left">
-                                    {/* The navigation items as setup in Ghost */}
                                     <Navigation data={site.navigation} navClass="site-nav-item" />
                                 </div>
                                 <div className="site-nav-right">
                                     <Link className="site-nav-button" to="/about">About</Link>
                                 </div>
                             </nav>
-                        </div>
+                        </div> */}
                     </header>
+                    <div className="main-container">
+                        <div className="elementor">
+                            <div className="elementor-inner">
+                                <div className="elementor-section-wrap">
+                                    <section className="breadcrumb_area breadcrumb_area_two vc-btn-gradient-color vc-btn-gradient-general"> 
+                                        <img className="breadcrumb_shap hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_500/v1580904957/VantageFit/website/lines.png" alt="lines"/>
+                                        <div className="marketinglanding post no-image">
+                                            <img className="breadcrumb_pulse hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_300/v1580904957/VantageFit/website/heart-lines.png" alt="pulse"/>
+                                        </div>
+                                        <div className="container">
+                                            <div className="breadcrumb_content text-center main_title">
+                                                <h1> The Vantage Fit Blog</h1>
+                                                <p className="white">All the latest news and insights on health and wellness</p>
+                                            </div>
+                                        </div> 
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <main id="content" className="container custom_container main-body " role="main">  
+                            <div className="row loop">	
+                                {children}
+                            </div>	
+                        </main>
+                    </div>
 
-                    <main className="site-main">
+                    {/* <main className="site-main"> */}
                         {/* All the main content gets inserted here, index.js, post.js */}
-                        {children}
-                    </main>
+                        {/* {children} */}
+                    {/* </main> */}
 
                 </div>
 
-                <div className="viewport-bottom">
+                {/* <div className="viewport-bottom"> */}
                     {/* The footer at the very bottom of the screen */}
-                    <footer className="site-foot">
+                    {/* <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
                                 <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
@@ -88,9 +164,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
                             </div>
                         </div>
-                    </footer>
+                    </footer> */}
 
-                </div>
+                {/* </div> */}
             </div>
 
         </>
@@ -132,3 +208,5 @@ const DefaultLayoutSettingsQuery = props => (
 )
 
 export default DefaultLayoutSettingsQuery
+
+{/* <header className="header_area header_stick" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}> */}

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql, withPrefix } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Navigation } from '.'
@@ -18,7 +18,7 @@ import $ from 'jquery'
 import '../../styles/all.css'
 import '../../styles/mainsite.css'
 import '../../styles/responsive.css'
-import '../../js/exitpopup.min.js'
+// import '../../js/exitpopup.min.js'
 
 /**
 * Main layout component
@@ -46,8 +46,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                     crossOrigin="anonymous"
                 />
-                <script
-                    src="https://blog.vantagefit.io/assets/js/disqusloader.js?v=60ad16a238" 
+                <script type="text/javascript"
+                    src={withPrefix(`disqusloader.js`)} 
                 />
                 <script src="https://blog.vantagefit.io/assets/js/libraries.min.js?v=60ad16a238"/>
                 <script src="https://blog.vantagefit.io/assets/js/exit-popup.js?v=60ad16a238"/>

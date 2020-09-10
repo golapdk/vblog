@@ -9,6 +9,22 @@
  * via ids/classnames etc.
  *
  */
+// 
+const $ = require("jquery")
+var customjquery = function(){
+    $(document).ready(function () {
+        // $.getScript("./src/js/disqusloader.js", function(data, textStatus, jqxhr) {
+        //     console.log(data); //data returned
+        //     console.log(textStatus); //success
+        //     console.log(jqxhr.status); //200
+        //     console.log('Load was performed.');
+        //     });
+        // // script.src = './src/js/disqusloader.js';
+        // console.log("The answer is don't think about it!")
+    });
+}
+
+
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.load-external-scripts script');
 
@@ -29,4 +45,5 @@ var trustAllScripts = function () {
 
 exports.onRouteUpdate = function () {
     trustAllScripts();
+    customjquery();
 };

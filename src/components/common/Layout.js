@@ -29,17 +29,15 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-
     // console.log(site)
-    // console.log(children[0][0])
-    // console.log(bodyClass)
-    // console.log($)
-
+    // console.log(children)
+    // console.log(isHome)
     return (
         <>
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/>
                 <body className={bodyClass} />
             </Helmet>
 
@@ -48,9 +46,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <header className="header_area header_stick ">
                         <nav className="navbar navbar-expand-lg menu_center">
                             <div className="container">
-                                <a className="navbar-brand sticky_logo">
-                                    <img src="/images/logo.png" width="220" />
-                                    {/* <img width="220" data-src="https://res.cloudinary.com/vantagecircle/image/upload/w_220/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Circle" className="stick_logo lozad" src="https://res.cloudinary.com/vantagecircle/image/upload/w_220/v1580904957/VantageFit/website/00-vantagefit-logo.png" data-loaded="true" /> */}
+                                <a className="navbar-brand ">
+                                    {/* <img src="/images/logo.png" width="220" /> */}
+                                    <img width="220" src="https://res.cloudinary.com/vantagecircle/image/upload/w_220/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Circle" className=" lozad" data-loaded="true" />
                                 </a>
                                 <a href="#" data-toggle="modal" data-target="#search" className="search-trigger headertrigger search_iconmob">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
@@ -120,30 +118,46 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </div> */}
                     </header>
                     <div className="main-container">
-                        <div className="elementor">
-                            <div className="elementor-inner">
-                                <div className="elementor-section-wrap">
-                                    <section className="breadcrumb_area breadcrumb_area_two vc-btn-gradient-color vc-btn-gradient-general"> 
-                                        <img className="breadcrumb_shap hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_500/v1580904957/VantageFit/website/lines.png" alt="lines"/>
-                                        <div className="marketinglanding post no-image">
-                                            <img className="breadcrumb_pulse hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_300/v1580904957/VantageFit/website/heart-lines.png" alt="pulse"/>
-                                        </div>
-                                        <div className="container">
-                                            <div className="breadcrumb_content text-center main_title">
-                                                <h1> The Vantage Fit Blog</h1>
-                                                <p className="white">All the latest news and insights on health and wellness</p>
+                        { isHome ?
+                            <div className="elementor">
+                                <div className="elementor-inner">
+                                    <div className="elementor-section-wrap">
+                                        <section className="breadcrumb_area breadcrumb_area_two vc-btn-gradient-color vc-btn-gradient-general"> 
+                                            <img className="breadcrumb_shap hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_500/v1580904957/VantageFit/website/lines.png" alt="lines"/>
+                                            <div className="marketinglanding post no-image">
+                                                <img className="breadcrumb_pulse hidden-xs" src="https://res.cloudinary.com/vantagecircle/image/upload/w_300/v1580904957/VantageFit/website/heart-lines.png" alt="pulse"/>
                                             </div>
-                                        </div> 
-                                    </section>
+                                            <div className="container">
+                                                <div className="breadcrumb_content text-center main_title">
+                                                    <div className="site-banner">
+                                                        <h1>{site.title}</h1>
+                                                        <p className="white">{site.description}</p>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </section>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <main id="content" className="container custom_container main-body " role="main">  
-                            <div className="row loop">	
+                            </div> : null
+                        }
+                        {isHome ? 
+                            <main id="content" className="container custom_container main-body " role="main">  
+                                <div className="row loop">	
+                                    {children}
+                                </div>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-12 text-center">
+                                            <a href="#" id="load-posts" data-posts_per_page="13" data-last="You have reached the end of the list" className="btn visible">Load more posts...</a>
+                                        </div>
+                                    </div>	
+                                </div>	
+                            </main> : 
+                            <main id="content" className="single-blog-post maincontainer" role="main">  
                                 {children}
-                            </div>	
-                        </main>
+
+                            </main>
+                        }
                     </div>
 
                     {/* <main className="site-main"> */}

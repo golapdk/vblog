@@ -21,15 +21,10 @@ const Index = ({ data, location, pageContext }) => {
             <MetaData location={location} />
             <Layout isHome={true}>
                 <HeadPost key={posts[0].node.id} post={posts[0].node} />
-                {/* <div className="container">
-                    <section className="post-feed"> */}
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
-                        ))}
-                    {/* </section> */}
-                    <Pagination pageContext={pageContext} />
-                {/* </div>  */}
+                {posts.map(({ node }) => (
+                    <PostCard key={node.id} post={node} />
+                ))}
+                {/* <Pagination pageContext={pageContext} /> */}
             </Layout>
         </>
     )

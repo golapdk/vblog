@@ -7,25 +7,25 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
-    console.log(post)
+    // console.log(post)
     return (
         <div className="col-md-6 col-lg-4 item">
             <article className="post" data-id="5f521b458c2e99003937acbe">
                 <div className="post-inner-content">
                     <div className="img-holder">
-                        <a href="/carpal-tunnel-syndrome-prevention/" className="featured-image" title="7 Measures for Carpal Tunnel Syndrome Prevention">
+                        <a href={url} className="featured-image" title="7 Measures for Carpal Tunnel Syndrome Prevention">
                             <img className="img-responsive" src={ post.feature_image } alt="7 Measures for Carpal Tunnel Syndrome Prevention"/>
                         </a>
                     </div>
 
                     <div className="inner">
-                        <h2 className="post-title"><a href="/carpal-tunnel-syndrome-prevention/" title="7 Measures for Carpal Tunnel Syndrome Prevention"> { post.title}</a></h2> 
-                        <a href="/carpal-tunnel-syndrome-prevention/" className="excerpt" title="7 Measures for Carpal Tunnel Syndrome Prevention">
+                        <h2 className="post-title"><a href={url} title="7 Measures for Carpal Tunnel Syndrome Prevention"> { post.title}</a></h2> 
+                        <a href={url} className="excerpt" title="7 Measures for Carpal Tunnel Syndrome Prevention">
                             { post.excerpt}
                         </a>
                         <div className="readtime_wrapper hidden-sm hidden-xs">
-                            <div className="tags">05-09-2020</div><i className="far fa-clock"></i>
-                            <div className="readtime">4 min read</div>
+                            <div className="tags">{ post.updated_at_pretty }</div><i className="far fa-clock"></i>
+                            <div className="readtime">{readingTime}</div>
                         </div>
                         <a href="#" className="read-later" data-id="5f521b458c2e99003937acbe"><i className="far fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookmark article"></i><i className="fas fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Remove bookmark"></i></a>
                     </div>

@@ -41,11 +41,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
                 {/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/> */}
-                <script
+                {/* <script
                     src="https://code.jquery.com/jquery-3.3.1.min.js"
                     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                     crossOrigin="anonymous"
-                />
+                /> */}
                 {/* <script type="text/javascript"
                     src={withPrefix(`libraries.min.js`)} 
                 /> */}

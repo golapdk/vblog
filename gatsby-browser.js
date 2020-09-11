@@ -624,7 +624,7 @@ jQuery(document).ready(function($) {
 
     $(window).on('resize', function(event) {
         w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        setMenu(w);
+        // setMenu(w);
     });
 
     // Set the right proportion for images inside the gallery

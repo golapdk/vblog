@@ -11,8 +11,8 @@ import { Popupbottom } from '.'
 
 // Styles
 // import '../../styles/app.css'
-import $ from 'jquery'
-// import '../../js/main.js'
+// import jQuery from 'jquery'
+// import '../../../static/main.js'
 // import '../../js/jquery.js'
 // import $ from "jquery";
 import '../../styles/all.css'
@@ -46,30 +46,27 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                     crossOrigin="anonymous"
                 />
-                <script type="text/javascript"
-                    src={withPrefix(`libraries.min.js`)} 
-                />
-                <script type="text/javascript"
-                    src={withPrefix(`exitpopup.min.js`)} 
-                />
-                <script type="text/javascript"
-                    src={withPrefix(`lozad.min.js`)}
-                />
-                <script type="text/javascript"
-                    src={withPrefix(`members.min.js`)}
-                />
                 {/* <script type="text/javascript"
-                    src={withPrefix(`jquery.js`)} 
+                    src={withPrefix(`libraries.min.js`)} 
                 /> */}
-                <script type="text/javascript"
+                {/* <script type="text/javascript"
+                    src={withPrefix(`exitpopup.min.js`)} 
+                /> */}
+                {/* <script type="text/javascript"
+                    src={withPrefix(`lozad.min.js`)}
+                /> */}
+                {/* <script type="text/javascript"
+                    src={withPrefix(`members.min.js`)}
+                /> */}
+                {/* <script type="text/javascript"
                     src={withPrefix(`disqusloader.js`)} 
-                />
-                <script type="text/javascript"
+                /> */}
+                {/* <script type="text/javascript"
                     src={withPrefix(`main.js`)} 
-                />
-                <script type="text/javascript"
+                /> */}
+                {/* <script type="text/javascript"
                     src={withPrefix(`content-api.min.js`)}
-                />
+                /> */}
                 {/* <script src="https://blog.vantagefit.io/assets/js/libraries.min.js?v=60ad16a238"/> */}
                 {/* <script src="https://blog.vantagefit.io/assets/js/exit-popup.js?v=60ad16a238"/> */}
                 {/* <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"/> */}

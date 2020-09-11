@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import { Layout , Recent} from '../components/common'
+import { Layout , Recent } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
@@ -28,6 +28,9 @@ const Post = ({ data, location }) => {
             />
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
+                <script>
+                {/* $.disqusLoader( '.disqus', { scriptUrl: 'https://vantagefit.disqus.com/embed.js' }) */}
+                </script>
             </Helmet>
             <div className="elementor">
                 <div className="elementor-inner">
@@ -163,8 +166,9 @@ const Post = ({ data, location }) => {
                             </div>
                         </div>
                     </div>
-                    
+                    <div className="disqus"></div>
                 </article>
+           
             </Layout>
         </>
     )

@@ -47,14 +47,36 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     crossOrigin="anonymous"
                 />
                 <script type="text/javascript"
+                    src={withPrefix(`libraries.min.js`)} 
+                />
+                <script type="text/javascript"
+                    src={withPrefix(`exitpopup.min.js`)} 
+                />
+                <script type="text/javascript"
+                    src={withPrefix(`lozad.min.js`)}
+                />
+                <script type="text/javascript"
+                    src={withPrefix(`members.min.js`)}
+                />
+                {/* <script type="text/javascript"
+                    src={withPrefix(`jquery.js`)} 
+                /> */}
+                <script type="text/javascript"
                     src={withPrefix(`disqusloader.js`)} 
                 />
-                <script src="https://blog.vantagefit.io/assets/js/libraries.min.js?v=60ad16a238"/>
-                <script src="https://blog.vantagefit.io/assets/js/exit-popup.js?v=60ad16a238"/>
-                <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"/>
-                <script src="https://blog.vantagefit.io/public/members.min.js?v=60ad16a238"/>
-                <script src=" https://unpkg.com/@tryghost/content-api@1.0.0/umd/content-api.min.js"/>
-                <script src="https://blog.vantagefit.io/assets/js/main.js?v=60ad16a238"/>
+                <script type="text/javascript"
+                    src={withPrefix(`main.js`)} 
+                />
+                <script type="text/javascript"
+                    src={withPrefix(`content-api.min.js`)}
+                />
+                {/* <script src="https://blog.vantagefit.io/assets/js/libraries.min.js?v=60ad16a238"/> */}
+                {/* <script src="https://blog.vantagefit.io/assets/js/exit-popup.js?v=60ad16a238"/> */}
+                {/* <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"/> */}
+                {/* <script src="https://blog.vantagefit.io/public/members.min.js?v=60ad16a238"/> */}
+                {/* <script src=" https://unpkg.com/@tryghost/content-api@1.0.0/umd/content-api.min.js"/> */}
+                {/* <script src="https://blog.vantagefit.io/assets/js/main.js?v=60ad16a238"/> */}
+                {/* <script src = "https://vantagefit.disqus.com/embed.js"/> */}
                 <body className={bodyClass} />
             </Helmet>
 

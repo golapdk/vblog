@@ -6,11 +6,11 @@ const Pagination = ({ pageContext }) => {
     const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext
 
     return (
-        <nav className="pagination" role="navigation">
+        <nav className="pagination mrauto" role="navigation">
             <div>
                 {previousPagePath && (
 
-                    <Link to={previousPagePath} rel="prev">
+                    <Link to={previousPagePath} rel="prev" className="previouscss ">
                             Previous
                     </Link>
 
@@ -20,7 +20,7 @@ const Pagination = ({ pageContext }) => {
             <div>
                 {nextPagePath && (
 
-                    <Link to={nextPagePath} rel="next">
+                    <Link to={nextPagePath} rel="next" className="previouscssnext">
                             Next
                     </Link>
                 )}

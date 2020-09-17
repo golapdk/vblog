@@ -42,6 +42,12 @@ module.exports = {
          *  Content Plugins
          */
         {
+            resolve: `gatsby-plugin-disqus`,
+            options: {
+                shortname: `vantagefit`,
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: path.join(__dirname, `src`, `pages`),

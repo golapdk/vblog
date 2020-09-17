@@ -11,6 +11,32 @@ body {
     font: 300 15px Poppins,sans-serif!important
 }
 
+.dispalyblock {
+    display: block !important;
+}
+
+.previouscss{
+    background: #067bfd;
+    padding: 6px;
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 10px;
+  }
+
+  .previouscssnext{
+    background: #f56764;
+    padding: 6px;
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 10px;
+  }
+  
+  .mrauto {
+      margin: auto;
+  }
+
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {
     display: block
 }
@@ -13971,3 +13997,4 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
         transform: translate(-50%,-50%) rotateX(-180deg) rotateY(-180deg)
     }
 }
+

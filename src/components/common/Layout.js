@@ -8,6 +8,7 @@ import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
 import { Popupbottom } from '.'
+// import GhostSearch from 'ghost-search'
 
 // Styles
 // import '../../styles/app.css'
@@ -28,6 +29,7 @@ import '../../styles/responsive.css'
 * styles, and meta data for each page.
 *
 */
+
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
@@ -40,42 +42,17 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                {/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/> */}
-                {/* <script
-                    src="https://code.jquery.com/jquery-3.3.1.min.js"
-                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                    crossOrigin="anonymous"
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`libraries.min.js`)} 
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`exitpopup.min.js`)} 
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`lozad.min.js`)}
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`members.min.js`)}
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`disqusloader.js`)} 
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`main.js`)} 
-                /> */}
-                {/* <script type="text/javascript"
-                    src={withPrefix(`content-api.min.js`)}
-                /> */}
-                {/* <script src="https://blog.vantagefit.io/assets/js/libraries.min.js?v=60ad16a238"/> */}
-                {/* <script src="https://blog.vantagefit.io/assets/js/exit-popup.js?v=60ad16a238"/> */}
-                {/* <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"/> */}
-                {/* <script src="https://blog.vantagefit.io/public/members.min.js?v=60ad16a238"/> */}
-                {/* <script src=" https://unpkg.com/@tryghost/content-api@1.0.0/umd/content-api.min.js"/> */}
-                {/* <script src="https://blog.vantagefit.io/assets/js/main.js?v=60ad16a238"/> */}
-                {/* <script src = "https://vantagefit.disqus.com/embed.js"/> */}
+                {/* <script src="https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_ukaiay.js"/>
+                <script src="https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js"/> */}
+                
                 <body className={bodyClass} />
             </Helmet>
+            {/* <script>
+                    var ghostSearch = new GhostSearch({
+                        "key": '22444f78447824223cefc48062', // This is just a demo key. Replace the key with a real one. See Step 3.
+                        url: 'https://demo.ghost.io', // This is just a demo host. Replace the demo url with a real one. See Step 3.
+                    })
+                </script> */}
 
             <div className="viewport">
                 <div className="viewport-top">
@@ -120,7 +97,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                             <a href="https://blog.vantagefit.io/" className="nav-link menu-top active">Blog</a>
                                         </li>
                                     </ul>
-                                    <a href="#" data-toggle="modal" data-target="#search" className="search-trigger headertrigger search_icondesk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966"><path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="#fff"></path></svg></a>
+                                    <a id="searchcall" className="search-trigger headertrigger search_icondesk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966"><path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="#fff"></path></svg></a>
                                     <a href="#" data-toggle="modal" data-target="#bookmark" className="bookmark-trigger headertrigger"><span className="counter hidden"></span><i className="far fa-bookmark"></i><i className="fas fa-bookmark"></i></a>
                                     <a className="menu_cus btn_get btn-meta btn_hover menu-top" href="https://go.vantagefit.io/get-a-demo/">Request Demo </a>
                                 </div>
@@ -259,6 +236,27 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     </footer> */}
 
                 {/* </div> */}
+                <div className="modal fade" id="search" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-body">
+                                <a href="#" data-dismiss="modal" aria-label="Close" className="close btn search_close">
+                                    <i className="fa fa-window-close"></i>
+                                </a>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <form className="search">
+                                                <input id="search-field" placeholder="Search" />
+                                            </form>
+                                            <div id="results" className="loop"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </>

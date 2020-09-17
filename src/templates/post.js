@@ -6,7 +6,8 @@ import { Helmet } from 'react-helmet'
 import { Layout , Recent } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import config from '../utils/siteConfig'
 /**
 * Single post view (/:slug)
 *
@@ -18,7 +19,11 @@ const Post = ({ data, location }) => {
     const recentposts = data.allGhostPost.edges
     const readingTime = readingTimeHelper(post)
     console.log(data)
-
+    let disqusConfig = {
+        url: `${config.siteUrl + location.pathname}`,
+        identifier: post.id,
+        title: post.title,
+    }
     return (
         <>
             <MetaData
@@ -166,7 +171,7 @@ const Post = ({ data, location }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="disqus"></div>
+                    <Disqus config={disqusConfig} />
                 </article>
            
             </Layout>

@@ -1,6 +1,6 @@
 module.exports = {
-    siteUrl: `https://test.vantaecircle.co.in`, // Site domain. Do not include a trailing slash!
-
+    siteUrl: `https://blog.vantagefit.io`, // Site domain. Do not include a trailing slash!
+    scriptUrl: `https://vantagefit.disqus.com/embed.js`,
     postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     siteTitleMeta: ``, // This allows an alternative site title for meta data for pages.

@@ -19,19 +19,14 @@ const addScript = url => {
 
 const $ = require("jquery")
 const  jQuery  = require("jquery")
+// const  jQuery  = require("./static/content.min.js")
 
-$.getScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_ukaiay.js", function() {
+$.getScript(`/content.min.js`, function() {
     // alert("Script loaded but not necessarily executed.");
  });
- $.getScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js", function() {
+ $.getScript(`/GhostSearch.min.js`, function() {
     // alert("Script loaded but not necessarily executed.");
  });
-//  $.getScript("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", function() {
-//     // alert("Script loaded but not necessarily executed.");
-//  });
-// addScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_ukaiay.js")
-// addScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js")        
-// addScript("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js")
 
 setTimeout(function(){ 
 

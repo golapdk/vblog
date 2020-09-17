@@ -26,9 +26,9 @@ $.getScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_uka
  $.getScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js", function() {
     // alert("Script loaded but not necessarily executed.");
  });
- $.getScript("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", function() {
-    // alert("Script loaded but not necessarily executed.");
- });
+//  $.getScript("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", function() {
+//     // alert("Script loaded but not necessarily executed.");
+//  });
 // addScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_ukaiay.js")
 // addScript("https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js")        
 // addScript("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js")
@@ -92,7 +92,9 @@ on: {
                 var dateSplit = val.obj.published_at.split('T');
                 dateSplit = dateSplit[0].split('-');
                 var month = monthNames[dateSplit[1]-1];
-                var date = moment(dateSplit[2]+'-'+month+'-'+dateSplit[1], "DD-MM-YYYY").format('DD MMM YYYY');
+                console.log(dateSplit)
+                var date = dateSplit[2]+'-'+dateSplit[1]+'-'+dateSplit[0];
+                // var date = moment(dateSplit[2]+'-'+month+'-'+dateSplit[1], "DD-MM-YYYY").format('DD MMM YYYY');
                 if (val.obj.feature_image) {
                     if (val.obj.feature_image.substring(0, 4) == 'http') {
                         // console.log('dd')

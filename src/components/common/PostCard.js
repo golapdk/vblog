@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faClock,
+    faBookmark,
+} from '@fortawesome/free-solid-svg-icons'
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
@@ -24,10 +29,10 @@ const PostCard = ({ post }) => {
                             { post.excerpt}
                         </a>
                         <div className="readtime_wrapper hidden-sm hidden-xs">
-                            <div className="tags">{ post.updated_at_pretty }</div><i className="far fa-clock"></i>
+                            <div className="tags">{ post.updated_at_pretty }</div><FontAwesomeIcon icon={faClock} size="1x" />
                             <div className="readtime">{readingTime}</div>
                         </div>
-                        <a href="#" className="read-later" data-id="5f521b458c2e99003937acbe"><i className="far fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookmark article"></i><i className="fas fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Remove bookmark"></i></a>
+                        {/* <a href="#" className="read-later" data-id="5f521b458c2e99003937acbe"><FontAwesomeIcon icon={faBookmark} size="1x" /><i className="far fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookmark article"></i><i className="fas fa-bookmark" data-toggle="tooltip" data-placement="right" title="" data-original-title="Remove bookmark"></i></a> */}
                     </div>
 
                 </div>

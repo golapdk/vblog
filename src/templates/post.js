@@ -8,6 +8,11 @@ import { MetaData } from '../components/common/meta'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import config from '../utils/siteConfig'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faClock,
+    faTimesCircle,
+} from '@fortawesome/free-solid-svg-icons'
 /**
 * Single post view (/:slug)
 *
@@ -82,7 +87,7 @@ const Post = ({ data, location }) => {
                                                             <div className="tags"></div>
                                                             <div className="tags">{post.updated_at_pretty}</div>
                                                             <div className="readtime_wrapper">
-                                                                <i className="far fa-clock"></i>
+                                                                <FontAwesomeIcon icon={faClock} size="1x" />
                                                                 <div className="readtime">{readingTime}</div>
                                                             </div>
                                                         </div>

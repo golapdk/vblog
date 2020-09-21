@@ -8,6 +8,13 @@ import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
 import { Popupbottom } from '.'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faBookmark,
+    faTimesCircle,
+    faBookmarkO,
+} from '@fortawesome/free-solid-svg-icons'
+
 // import GhostSearch from 'ghost-search'
 
 // Styles
@@ -19,6 +26,7 @@ import { Popupbottom } from '.'
 import '../../styles/all.css'
 import '../../styles/mainsite.css'
 import '../../styles/responsive.css'
+// import '../../styles/font-awesome.min.css'
 // import '../../js/exitpopup.min.js'
 
 /**
@@ -98,7 +106,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         </li>
                                     </ul>
                                     <a id="searchcall" className="search-trigger headertrigger search_icondesk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966"><path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="#fff"></path></svg></a>
-                                    <a href="#" data-toggle="modal" data-target="#bookmark" className="bookmark-trigger headertrigger"><span className="counter hidden"></span><i className="far fa-bookmark"></i><i className="fas fa-bookmark"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#bookmark" className="bookmark-trigger headertrigger"><span className="counter hidden"></span><FontAwesomeIcon icon={faBookmark} size="1x" /></a>
                                     <a className="menu_cus btn_get btn-meta btn_hover menu-top" href="https://go.vantagefit.io/get-a-demo/">Request Demo </a>
                                 </div>
                             </div>
@@ -240,8 +248,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-body">
-                                <a href="#" data-dismiss="modal" aria-label="Close" className="close btn search_close">
-                                    <i className="fa fa-window-close"></i>
+                                <a id="search_close" aria-label="Close" className="close btn search_close">
+                                    <FontAwesomeIcon icon={faTimesCircle} size="1x" />
                                 </a>
                                 <div className="container">
                                     <div className="row">

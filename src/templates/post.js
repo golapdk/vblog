@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 import { Layout , Recent } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-// import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import config from '../utils/siteConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {

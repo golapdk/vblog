@@ -174,7 +174,7 @@ const Post = ({ data, location }) => {
                                 </div>
   
                             </div>
-                            {/* <Disqus config={disqusConfig} /> */}
+                            <Disqus config={disqusConfig} />
                         </div>
                     </div>
                     

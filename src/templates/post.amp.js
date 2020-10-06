@@ -34,7 +34,7 @@ const Post = ({ data, location }) => {
     // }
     return (
         <>
-            <MetaData
+            {/* <MetaData
                 data={data}
                 location={location}
                 type="article"
@@ -79,27 +79,25 @@ const Post = ({ data, location }) => {
                     <footer className="post-full-footer">
                         <div className="post-share-tags-container">
                             <section className="post-full-share-buttons">
-                                <a className="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" rel="nofollow">
+                                <a className="facebook" href="" rel="nofollow">
                                 </a>
 
-                                <a className="twitter" href="https://twitter.com/share?text={{encode title}}&amp;url="  rel="nofollow">
+                                <a className="twitter" href="" rel="nofollow">
                                 </a>
 
-                                <a className="gplus" href="https://plus.google.com/share?url={{
-                                                            url" rel="nofollow">
+                                <a className="gplus" href="" rel="nofollow">
                                 </a>
 
-                                <a className="whatsapp" href="whatsapp://send?text=url" rel="nofollow">
+                                <a className="whatsapp" href="" rel="nofollow">
                                 </a>
 
-                                <a className="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{
-                                                            url" rel="nofollow">
+                                <a className="linkedin" href="" rel="nofollow">
                                 </a>
                             </section>
                             <section className="post-full-tags">
                                 <ul>
                                     <li>
-                                        <a href="{{url}}" title="Posts tagged under {{name}}" className="tag tag-{{id}} {{slug}}"></a>
+                                        <a href="" title="Posts tagged under" className="tag tag-"></a>
                                     </li>
                                 </ul>
                             </section>
@@ -121,7 +119,7 @@ const Post = ({ data, location }) => {
                     <a className="twitter" href="https://twitter.com/VantageCircle" rel="nofollow"></a>
                     <a className="youtube" href="https://www.youtube.com/channel/UCzb6J4NEmhuGpj_-u2kz7aw" rel="nofollow"></a>
                 </section>
-            </footer>
+            </footer> */}
         </>
     )
 }

@@ -29,7 +29,6 @@ import '../../styles/responsive.css'
 // import '../../styles/font-awesome.min.css'
 // import '../../js/exitpopup.min.js'
 
-
 /**
 * Main layout component
 *

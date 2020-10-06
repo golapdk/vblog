@@ -24,7 +24,7 @@ import {
 // import '../../js/jquery.js'
 // import $ from "jquery";
 import '../../styles/all.css'
-import '../../styles/mainsite.css'
+// import '../../styles/mainsite.css'
 import '../../styles/responsive.css'
 // import '../../styles/font-awesome.min.css'
 // import '../../js/exitpopup.min.js'

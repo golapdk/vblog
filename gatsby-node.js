@@ -65,6 +65,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const postTemplate = path.resolve(`./src/templates/post.js`)
 
+    //amp tampletes
+    const amppostTemplate = path.resolve(`./src/templates/post.amp.js`)
+
     // Create tag pages
     tags.forEach(({ node }) => {
         const totalPosts = node.postCount !== null ? node.postCount : 0
@@ -177,6 +180,38 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
             path: node.url,
             component: postTemplate,
+            context: {
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                slug: node.slug,
+            },
+        })
+    })
+
+    // Create pagination
+    paginate({
+        createPage,
+        items: posts,
+        itemsPerPage: postsPerPage,
+        component: indexTemplate,
+        pathPrefix: ({ pageNumber }) => {
+            if (pageNumber === 0) {
+                return `/`
+            } else {
+                return `/page`
+            }
+        },
+    })
+
+    // Create AMP post pages
+    posts.forEach(({ node }) => {
+        // This part here defines, that our posts will use
+        // a `/:slug/` permalink.
+        node.url = `/${node.slug}/amp`
+
+        createPage({
+            path: node.url,
+            component: amppostTemplate,
             context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.

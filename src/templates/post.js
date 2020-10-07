@@ -24,11 +24,11 @@ const Post = ({ data, location }) => {
     const recentposts = data.allGhostPost.edges
     const readingTime = readingTimeHelper(post)
     console.log(data)
-    // let disqusConfig = {
-    //     url: `${config.siteUrl + location.pathname}`,
-    //     identifier: post.id,
-    //     title: post.title,
-    // }
+    let disqusConfig = {
+        url: `${config.siteUrl + location.pathname}`,
+        identifier: post.id,
+        title: post.title,
+    }
     return (
         <>
             <MetaData
@@ -174,7 +174,7 @@ const Post = ({ data, location }) => {
                                 </div>
   
                             </div>
-                            {/* <Disqus config={disqusConfig} /> */}
+                            <Disqus config={disqusConfig} />
                         </div>
                     </div>
                     

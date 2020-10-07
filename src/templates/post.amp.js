@@ -25,6 +25,7 @@ const Post = ({ data, location }) => {
     const post = data.ghostPost
     const recentposts = data.allGhostPost.edges
     const readingTime = readingTimeHelper(post)
+    const url = post.url + '#disqus_thread'
     console.log(data)
     console.log(post)
     // let disqusConfig = {
@@ -104,7 +105,7 @@ const Post = ({ data, location }) => {
                         </div>
                         <div className="clear"></div>
                         <section className="post-full-comments">
-                            <a href="">
+                            <a href={url}>
                                     Comments are on this page
                             </a>
                         </section>

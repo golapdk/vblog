@@ -112,6 +112,9 @@ const Post = ({ data, location }) => {
                     </footer>
                 </article>
             </main>
+            <a href="https://go.vantagefit.io/get-a-demo/">
+                <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1601989071/VantageFit/website/vantagefit-requestdemo.png" width="300" height="36" layout="responsive" alt="" />
+            </a>
             <footer className="site-footer clearfix">
                 <p>© 2020&nbsp;&nbsp;Vantage Fit-Corporate Wellness Blog</p>
                 <section className="site-footer-social-buttons">

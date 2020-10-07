@@ -52,7 +52,20 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
                 {/* <script src="https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600331281/con_ukaiay.js"/>
                 <script src="https://res.cloudinary.com/dstkxhnrv/raw/upload/v1600328361/gs_c8wv0g.js"/> */}
-                
+                <script type="text/javascript">
+                    {`    piAId = '848903';
+                        piCId = '17486';
+                        piHostname = 'pi.pardot.com';
+
+                        (function() {
+                            function async_load(){
+                                var s = document.createElement('script'); s.type = 'text/javascript';
+                                s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+                                var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+                            }
+                            if(window.attachEvent) { window.attachEvent('onload', async_load); }
+                            else { window.addEventListener('load', async_load, false); }
+                        })();`}</script>
                 <body className={bodyClass} />
             </Helmet>
             {/* <script>

@@ -71,7 +71,7 @@ const Post = ({ data, location }) => {
                     </header>
                     { post.feature_image ?
                         <figure className="post-image">
-                            <amp-img src={ post.feature_image } class="contain" layout="fill" alt={ post.title } />
+                            <amp-img src={ post.feature_image } class="contain" layout="responsive" alt={ post.title } />
                         </figure> : null }
                     {/* <figure className="post-image"> */}
                     {/* <amp-img src={ post.feature_image } layout="responsive">

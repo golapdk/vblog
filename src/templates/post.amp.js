@@ -42,6 +42,20 @@ const Post = ({ data, location }) => {
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
                 <link rel="stylesheet" href="/ampshred.css" />
+                    <script type="text/javascript">
+                        {`    piAId = '848903';
+                            piCId = '17486';
+                            piHostname = 'pi.pardot.com';
+
+                            (function() {
+                                function async_load(){
+                                    var s = document.createElement('script'); s.type = 'text/javascript';
+                                    s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+                                    var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+                                }
+                                if(window.attachEvent) { window.attachEvent('onload', async_load); }
+                                else { window.addEventListener('load', async_load, false); }
+                            })();`}</script>
             </Helmet>
             <header className="site-nav-logo">
                 <a className="link" href="https://blog.vantagefit.io">
@@ -73,17 +87,12 @@ const Post = ({ data, location }) => {
                         <figure className="post-image">
                             <amp-img src={ post.feature_image } class="contain" width="600" height="400" layout="responsive" alt={ post.title } />
                         </figure> : null }
-                    {/* <figure className="post-image"> */}
-                    {/* <amp-img src={ post.feature_image } layout="responsive">
-                            <img decoding="async" src={ post.feature_image } style={{ width: `100%` }} />
-                        </amp-img> */}
-                    {/* </figure> */}
                     <section className="post-content load-external-scripts" dangerouslySetInnerHTML={{ __html: post.html }}>
                     </section>
-
+                    
                     <footer className="post-full-footer">
-                        <div className="post-share-tags-container">
-                            <section className="post-full-share-buttons">
+                        <div className="post-share-tags-container hhtag">
+                            <section className="post-full-share-buttons ">
                                 <a className="facebook" href="" rel="nofollow">
                                 </a>
 

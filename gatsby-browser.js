@@ -1012,6 +1012,6 @@ exports.onRouteUpdate = function () {
 
     trustAllScripts();
     customjquery();
-    pardot();
+    // pardot();
 };
 

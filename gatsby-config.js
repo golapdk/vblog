@@ -44,20 +44,20 @@ module.exports = {
         {
             resolve: `gatsby-plugin-amp`,
             options: {
-                // analytics: {
-                //     type: `gtag`,
-                //     dataCredentials: `include`,
-                //     config: {
-                //       vars: {
-                //         gtag_id: <GA_TRACKING_ID>,
-                //         config: {
-                //           <GA_TRACKING_ID>: {
-                //             page_location: '{{pathname}}'
-                //           },
-                //         },
-                //       },
-                //     },
-                // },
+                analytics: {
+                    type: `gtag`,
+                    dataCredentials: `include`,
+                    config: {
+                        vars: {
+                            gtag_id: `UA-47126287-7`,
+                            config: {
+                                "UA-47126287-7": {
+                                    page_location: `{{pathname}}`,
+                                },
+                            },
+                        },
+                    },
+                },
                 canonicalBaseUrl: `https://vantagefitblog.ghost.io`,
                 components: [`amp-form`],
                 excludedPaths: [`/404*`, `/`],

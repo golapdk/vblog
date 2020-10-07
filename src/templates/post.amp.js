@@ -34,7 +34,7 @@ const Post = ({ data, location }) => {
     // }
     return (
         <>
-            {/* <MetaData
+            <MetaData
                 data={data}
                 location={location}
                 type="article"
@@ -73,7 +73,7 @@ const Post = ({ data, location }) => {
                             <img decoding="async" src={ post.feature_image } style={{ width: `100%` }} />
                         </amp-img>
                     </figure>
-                    <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }}>
+                    <section className="post-content load-external-scripts" dangerouslySetInnerHTML={{ __html: post.html }}>
                     </section>
 
                     <footer className="post-full-footer">
@@ -119,7 +119,7 @@ const Post = ({ data, location }) => {
                     <a className="twitter" href="https://twitter.com/VantageCircle" rel="nofollow"></a>
                     <a className="youtube" href="https://www.youtube.com/channel/UCzb6J4NEmhuGpj_-u2kz7aw" rel="nofollow"></a>
                 </section>
-            </footer> */}
+            </footer>
         </>
     )
 }

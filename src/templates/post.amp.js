@@ -47,7 +47,7 @@ const Post = ({ data, location }) => {
                 <a className="link" href="https://blog.vantagefit.io">
                     <div className="img">
                         {/* <amp-img src={ post.feature_image } class="contain" layout="fill" alt={ post.title } /> */}
-                        <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Fit-Corporate Wellness Blog" />
+                        <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1580904957/VantageFit/website/00-vantagefit-logo.png" width="300" height="36" layout="responsive" alt="Vantage Fit-Corporate Wellness Blog" />
                         {/* <img decoding="async" alt="Vantage Fit-Corporate Wellness Blog" src="https://res.cloudinary.com/vantagecircle/image/upload/w_100/v1580904957/VantageFit/website/00-vantagefit-logo.png" className="i-amphtml-fill-content i-amphtml-replaced-content"/> */}
                         {/* </amp-img> */}
                     </div>
@@ -71,7 +71,7 @@ const Post = ({ data, location }) => {
                     </header>
                     { post.feature_image ?
                         <figure className="post-image">
-                            <amp-img src={ post.feature_image } class="contain" layout="responsive" alt={ post.title } />
+                            <amp-img src={ post.feature_image } class="contain" width="600" height="400" layout="responsive" alt={ post.title } />
                         </figure> : null }
                     {/* <figure className="post-image"> */}
                     {/* <amp-img src={ post.feature_image } layout="responsive">

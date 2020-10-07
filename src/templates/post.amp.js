@@ -46,9 +46,10 @@ const Post = ({ data, location }) => {
             <header className="site-nav-logo">
                 <a className="link" href="https://blog.vantagefit.io">
                     <div className="img">
-                        <amp-img layout="responsive" width="300" height="36" src="https://res.cloudinary.com/vantagecircle/image/upload/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Fit-Corporate Wellness Blog" className="i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" i-amphtml-layout="responsive" i-amphtml-auto-lightbox-visited=""><i-amphtml-sizer slot="i-amphtml-svc" ></i-amphtml-sizer>
-                            <img decoding="async" alt="Vantage Fit-Corporate Wellness Blog" src="https://res.cloudinary.com/vantagecircle/image/upload/w_100/v1580904957/VantageFit/website/00-vantagefit-logo.png" className="i-amphtml-fill-content i-amphtml-replaced-content"/>
-                        </amp-img>
+                        {/* <amp-img src={ post.feature_image } class="contain" layout="fill" alt={ post.title } /> */}
+                        <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1580904957/VantageFit/website/00-vantagefit-logo.png" alt="Vantage Fit-Corporate Wellness Blog" />
+                        {/* <img decoding="async" alt="Vantage Fit-Corporate Wellness Blog" src="https://res.cloudinary.com/vantagecircle/image/upload/w_100/v1580904957/VantageFit/website/00-vantagefit-logo.png" className="i-amphtml-fill-content i-amphtml-replaced-content"/> */}
+                        {/* </amp-img> */}
                     </div>
                 </a>
             </header>
@@ -68,11 +69,15 @@ const Post = ({ data, location }) => {
                             </div>
                         </section>
                     </header>
-                    <figure className="post-image">
-                        <amp-img src={ post.feature_image } layout="responsive">
+                    { post.feature_image ?
+                        <figure className="post-image">
+                            <amp-img src={ post.feature_image } class="contain" layout="fill" alt={ post.title } />
+                        </figure> : null }
+                    {/* <figure className="post-image"> */}
+                    {/* <amp-img src={ post.feature_image } layout="responsive">
                             <img decoding="async" src={ post.feature_image } style={{ width: `100%` }} />
-                        </amp-img>
-                    </figure>
+                        </amp-img> */}
+                    {/* </figure> */}
                     <section className="post-content load-external-scripts" dangerouslySetInnerHTML={{ __html: post.html }}>
                     </section>
 

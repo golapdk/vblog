@@ -42,8 +42,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-    // console.log(site)
-    // console.log(children)
+    const action = localStorage.getItem(`showMsg`)
+    const showMessage = action === `false` ? false : true
+    console.log(showMessage)
     // console.log(isHome)
     return (
         <>
@@ -200,7 +201,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     </div>
 
                 </div>
-                <Popupbottom />
+                { showMessage === true ? <Popupbottom /> : null }
                 <footer className="new_footer_area bg_color popupspc"> 
                     <div className="new_footer_top"> 
                         <div className="container custom_container"> 

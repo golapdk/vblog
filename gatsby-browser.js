@@ -33,9 +33,6 @@ const  jQuery  = require("jquery")
     $.getScript( "/GhostSearch.min.js" ),
     $.getScript( "/content.min.js" ),
     // $.getScript( "/jquery.cookie.js" ),
-    // $.getScript( "/members.min.js" ),
-    // $.getScript( "/exitpopup.min.js" ),
-    // $.getScript( "/lozad.min.js" ),
     $.Deferred(function( deferred ){
         $( deferred.resolve );
     })

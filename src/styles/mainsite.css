@@ -32,6 +32,11 @@ body {
     font-weight: 500;
     margin: 10px;
   }
+  .vc_button {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #f15162;
+}
   
   .mrauto {
       margin: auto;

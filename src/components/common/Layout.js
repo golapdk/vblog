@@ -42,8 +42,20 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-    const action = localStorage.getItem(`showMsg`)
-    const showMessage = action === `false` ? false : true
+    // var isNode = typeof module !== `undefined`
+
+    if (typeof window !== 'undefined') {
+        console.log(`one`)
+        //use the local storage
+        var action = localStorage.getItem(`showMsg`)
+        var showMessage = action === `false` ? false : true
+    } else {
+        console.log(`two`)
+        var showMessage = true 
+    }
+
+    // const action = localStorage.getItem(`showMsg`)
+    // const showMessage = action === `false` ? false : true
     console.log(showMessage)
     // console.log(isHome)
     return (

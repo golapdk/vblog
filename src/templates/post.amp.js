@@ -103,7 +103,7 @@ const Post = ({ data, location }) => {
                     </footer>
                 </article>
                 <a href="https://go.vantagefit.io/get-a-demo/">
-                    <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1601989071/VantageFit/website/vantagefit-requestdemo.png" width="300" height="36" layout="responsive" alt="" />
+                    <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1601989071/VantageFit/website/vantagefit-requestdemo.png" width="681" height="238" layout="responsive" alt="" />
                 </a>
             </main>
 

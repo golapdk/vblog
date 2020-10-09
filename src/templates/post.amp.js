@@ -13,6 +13,7 @@ import {
     faClock,
     faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons'
+// import LazyLoad from 'react-lazy-load'
 
 // import '../styles/ampshred.css'
 /**
@@ -26,13 +27,6 @@ const Post = ({ data, location }) => {
     const recentposts = data.allGhostPost.edges
     const readingTime = readingTimeHelper(post)
     const url = post.url + '#disqus_thread'
-    console.log(data)
-    console.log(post)
-    // let disqusConfig = {
-    //     url: `${config.siteUrl + location.pathname}`,
-    //     identifier: post.id,
-    //     title: post.title,
-    // }
     return (
         <>
             <MetaData
@@ -47,10 +41,7 @@ const Post = ({ data, location }) => {
             <header className="site-nav-logo">
                 <a className="link" href="https://blog.vantagefit.io">
                     <div className="img">
-                        {/* <amp-img src={ post.feature_image } class="contain" layout="fill" alt={ post.title } /> */}
                         <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1580904957/VantageFit/website/00-vantagefit-logo.png" width="300" height="36" layout="responsive" alt="Vantage Fit-Corporate Wellness Blog" />
-                        {/* <img decoding="async" alt="Vantage Fit-Corporate Wellness Blog" src="https://res.cloudinary.com/vantagecircle/image/upload/w_100/v1580904957/VantageFit/website/00-vantagefit-logo.png" className="i-amphtml-fill-content i-amphtml-replaced-content"/> */}
-                        {/* </amp-img> */}
                     </div>
                 </a>
             </header>
@@ -111,10 +102,11 @@ const Post = ({ data, location }) => {
                         </section>
                     </footer>
                 </article>
+                <a href="https://go.vantagefit.io/get-a-demo/">
+                    <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1601989071/VantageFit/website/vantagefit-requestdemo.png" width="300" height="36" layout="responsive" alt="" />
+                </a>
             </main>
-            <a href="https://go.vantagefit.io/get-a-demo/">
-                <amp-img src="https://res.cloudinary.com/vantagecircle/image/upload/v1601989071/VantageFit/website/vantagefit-requestdemo.png" width="300" height="36" layout="responsive" alt="" />
-            </a>
+
             <footer className="site-footer clearfix">
                 <p>© 2020&nbsp;&nbsp;Vantage Fit-Corporate Wellness Blog</p>
                 <section className="site-footer-social-buttons">

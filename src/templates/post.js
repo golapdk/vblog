@@ -13,6 +13,7 @@ import {
     faClock,
     faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons'
+import LazyLoad from 'react-lazy-load'
 /**
 * Single post view (/:slug)
 *
@@ -174,7 +175,10 @@ const Post = ({ data, location }) => {
                                 </div>
   
                             </div>
-                            <Disqus config={disqusConfig} />
+                            <LazyLoad offsetTop={400}>
+                                <Disqus config={disqusConfig} />
+                            </LazyLoad>
+
                         </div>
                     </div>
                     
